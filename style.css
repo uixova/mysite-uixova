@@ -1,13 +1,12 @@
 body {
     background-color: #262626;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
 }
 
 .baslik {
     background-color: #0d0d0d;
-    padding: 10px 20px; /* üst-alt 10px, sağ-sol 20px */
+    padding: 1px;
     border: 2px solid #d1d1d1;
     border-radius: 25px;
     font-size: 15px;
@@ -15,51 +14,73 @@ body {
     color: white;
     text-align: center;
     margin-top: 50px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
 }
-
 .resim {
-    max-width: 100%;  /* mobilde taşmayı önler */
-    height: auto;
-    margin: 10px auto;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1400px;
     object-fit: cover;
     pointer-events: none;
     -webkit-user-drag: none;
     user-select: none;
     margin-top: 60px; /* resmi aşağı indirir */
 }
-
-.home-link, .about-link, .services-link, .contact-link {
+.home-link {
     color: #ffffff;
     text-decoration: none;
-    font-size: 18px;
-    margin: 5px 10px;
-    position: static; /* artık absolute değil */
+    font-size: 20px;
+    margin-right: 20px;
+    position: absolute;
+    top: 80px;
+    left: 79%;
 }
-
+.about-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px;
+    margin-right: 20px;
+    position: absolute;
+    top: 80px;
+    left: 84%;
+}
+.services-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px;
+    margin-right: 20px;
+    position: absolute;
+    top: 80px;
+    left: 89%;
+}
+.contact-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px;
+    margin-right: 20px;
+    position: absolute;
+    top: 80px;
+    left: 94%;
+}
 .anasayfa {
     color: #ffffff;
     font-size: 20px;
     font-weight: 600;
     text-align: center;
     margin-top: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    line-height: 1.2;
+    line-height: 0.5;
 }
-
 .container {
-    display: flex;
-    flex-wrap: wrap; /* ekran daraldığında alt satıra geçer */
+  display: flex; 
+    align-items: center; 
     justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    padding: 20px;
+    margin-top: 20px; 
+    padding: 20px; 
 }
 
 .text1 {
@@ -67,25 +88,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    margin: 10px auto;
-    max-width: 500px;
-    line-height: 1.2;
-}
-
-/* Mobil uyumluluk */
-@media (max-width: 600px) {
-    .baslik {
-        flex-direction: column;
-        padding: 8px 10px;
-        font-size: 14px;
-        margin-top: 20px;
-    }
-    .resim {
-        margin-top: 20px;
-    }
-    .text1, .anasayfa {
-        max-width: 90%;
-        margin: 10px auto;
-        font-size: 16px;
-    }
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
 }
