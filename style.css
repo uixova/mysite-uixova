@@ -1,94 +1,122 @@
 body {
     background-color: #262626;
-     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
+/* Başlık */
 .baslik {
     background-color: #0d0d0d;
-    padding: 1px;
-    border: 2px solid #d1d1d1;
-    border-radius: 25px;
-    font-size: 15px;
+    padding: 0.6em 43em; 
+    border: 0.15em solid #d1d1d1;
+    border-radius: 0em;
+    font-size: 1em; 
     font-weight: bold;
     color: white;
     text-align: center;
-    margin-top: 50px;
+    margin: 0vw auto 1.5vw auto;
+    max-width: 500px; 
 }
+
+/* Resim */
 .resim {
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    width: 1400px;
+    display: block;
+    margin: 2em auto 0 auto;
+    width: 80vw;
+    max-width: 100%;
+    height: auto;
     object-fit: cover;
     pointer-events: none;
     -webkit-user-drag: none;
     user-select: none;
-    margin-top: 60px; /* resmi aşağı indirir */
 }
-.home-link {
+
+/* Navigation bar - Absolute konumlu */
+.home-link, .about-link, .services-link, .contact-link {
     color: #ffffff;
     text-decoration: none;
-    font-size: 20px;
-    margin-right: 20px;
+    font-size: 1vw; 
+    font-weight: 500;
     position: absolute;
-    top: 80px;
-    left: 79%;
+    top: 4.3vh;
 }
-.about-link {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 20px;
-    margin-right: 20px;
-    position: absolute;
-    top: 80px;
-    left: 84%;
-}
-.services-link {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 20px;
-    margin-right: 20px;
-    position: absolute;
-    top: 80px;
-    left: 89%;
-}
-.contact-link {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 20px;
-    margin-right: 20px;
-    position: absolute;
-    top: 80px;
-    left: 94%;
-}
+
+.home-link { left: 79%; }
+.about-link { left: 84%; }
+.services-link { left: 89%; }
+.contact-link { left: 94%; }
+
+/* Anasayfa Section */
 .anasayfa {
     color: #ffffff;
-    font-size: 20px;
+    font-size: 0.9vw; 
     font-weight: 600;
     text-align: center;
-    margin-top: 20px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin-top: 1.5vw; 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    line-height: 0.5;
-}
-.container {
-  display: flex; 
-    align-items: center; 
-    justify-content: center;
-    margin-top: 20px; 
-    padding: 20px; 
+    line-height: 1; 
 }
 
+/* Container */
+.container {
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    margin-top: 2vw; 
+    padding: 2vw; 
+    flex-wrap: wrap;
+}
+
+/* Text */
 .text1 {
     color: #ffffff;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
-    margin-left: auto;
-    margin-right: auto;
-    width: 1000px;
+    margin: 0 auto;
+    width: 90%;
+    flex-wrap: wrap;
+    gap: 0.4em; 
+}
+
+/* Media Queries */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .home-link { left: 70%; font-size: 2vw; }
+    .about-link { left: 75%; font-size: 2vw; }
+    .services-link { left: 80%; font-size: 2vw; }
+    .contact-link { left: 85%; font-size: 2vw; }
+    .anasayfa { font-size: 2vw; margin-top: 1.5vw; line-height: 1; }
+    .text1 { width: 95%; flex-direction: column; gap: 0.4em; }
+    .resim { width: 95%; margin-top: 1.5em; }
+    .baslik { font-size: 1em; margin-top: 4vw; max-width: 90%; }
+}
+
+/* Büyük telefon / küçük tablet */
+@media (max-width: 768px) {
+    .home-link { left: 55%; font-size: 2.5vw; }
+    .about-link { left: 60%; font-size: 2.5vw; }
+    .services-link { left: 65%; font-size: 2.5vw; }
+    .contact-link { left: 70%; font-size: 2.5vw; }
+    .anasayfa { font-size: 2.5vw; margin-top: 1.5vw; line-height: 1; }
+    .text1 { width: 95%; text-align: center; flex-direction: column; gap: 0.4em; }
+    .resim { width: 95%; margin-top: 1.5em; }
+    .baslik { font-size: 1em; margin-top: 4vw; }
+}
+
+/* Telefon */
+@media (max-width: 480px) {
+    .home-link { left: 40%; font-size: 3vw; }
+    .about-link { left: 50%; font-size: 3vw; }
+    .services-link { left: 60%; font-size: 3vw; }
+    .contact-link { left: 70%; font-size: 3vw; }
+    .anasayfa { font-size: 3vw; margin-top: 1.5vw; line-height: 1; }
+    .text1 { width: 100%; flex-direction: column; text-align: center; gap: 0.4em; }
+    .resim { width: 100%; margin-top: 1.5em; }
+    .baslik { font-size: 1em; margin-top: 4vw; max-width: 90%; }
 }
