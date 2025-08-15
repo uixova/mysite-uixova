@@ -6,19 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web sayfam</title>
     <link rel="stylesheet" href="style.css">
-
-    </head>
+</head>
 
 <body>
 <!-- Başlık -->
-  <header  
-    <div class="baslik">
-<h1 style="text-align: center;">Web Sayfam</h1>
-<a href="#home " class="home-link">Anasayfa</a>
-<a href="#about" class="about-link">Hakkında</a>
-<a href="#services" class="services-link">Hizmetler</a>
-<a href="#contact" class="contact-link">İletişim</a>
-</div>
+<header>
+  <div class="baslik">
+    <h1 style="text-align: center;">Web Sayfam</h1>
+
+    <!-- Hamburger Menü -->
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <nav class="nav-links">
+        <a href="#home">Anasayfa</a>
+        <a href="#about">Hakkında</a>
+        <a href="#services">Hizmetler</a>
+        <a href="#contact">İletişim</a>
+    </nav>
+  </div>
 </header>
 
 <!-- Anasayfa -->
@@ -27,10 +31,18 @@
     <span class="anasayfa">Bu, web sayfamızın anasayfasıdır.</span>
     <span class="anasayfa">Burada en son haberleri ve duyuruları bulabilirsiniz.</span>
     <div class="container">
-  <div class="resim">
-    <img src="image/img1.jpg" alt="Görsel" width="500">
-  </div>
-    
-  </body>
+        <div class="resim">
+            <img src="image/img1.jpg" alt="Görsel">
+        </div>
+    </div>
+</div>
 
+<script>
+function toggleMenu() {
+  const nav = document.querySelector('.nav-links');
+  nav.classList.toggle('active');
+}
+</script>
+
+</body>
 </html>

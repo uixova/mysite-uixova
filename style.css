@@ -1,3 +1,4 @@
+/* Genel Ayarlar */
 body {
     background-color: #262626;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -8,57 +9,52 @@ body {
 /* Başlık */
 .baslik {
     background-color: #0d0d0d;
-    padding: 0.6em 43em; 
+    padding: 0.8em 2em;
     border: 0.15em solid #d1d1d1;
-    border-radius: 0em;
     font-size: 1em; 
     font-weight: bold;
     color: white;
     text-align: center;
-    margin: 0vw auto 1.5vw auto;
-    max-width: 500px; 
+    margin: 0 auto 1.5vw auto;
+    max-width: 95%; 
+    position: relative;
 }
 
-/* Resim */
-.resim {
-    display: block;
-    margin: 2em auto 0 auto;
-    width: 80vw;
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
-    pointer-events: none;
-    -webkit-user-drag: none;
-    user-select: none;
-}
-
-/* Navigation bar - Absolute konumlu */
-.home-link, .about-link, .services-link, .contact-link {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1vw; 
-    font-weight: 500;
+/* Hamburger Menü */
+.menu-icon {
+    display: none;
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
     position: absolute;
-    top: 4.3vh;
+    right: 1em;
+    top: 0.2em;
 }
 
-.home-link { left: 79%; }
-.about-link { left: 84%; }
-.services-link { left: 89%; }
-.contact-link { left: 94%; }
+/* Navigation */
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    flex-wrap: wrap;
+}
 
-/* Anasayfa Section */
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1em;
+}
+
+/* Anasayfa metinleri */
 .anasayfa {
     color: #ffffff;
-    font-size: 0.9vw; 
+    font-size: 1em; 
     font-weight: 600;
     text-align: center;
-    margin-top: 1.5vw; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    line-height: 1; 
+    margin: 0.5em 0;
+    display: block;
+    line-height: 1.2; 
 }
 
 /* Container */
@@ -69,9 +65,23 @@ body {
     margin-top: 2vw; 
     padding: 2vw; 
     flex-wrap: wrap;
+    position: relative;
 }
 
-/* Text */
+/* Resim */
+.resim img {
+    width: 500px; /* pc için boyut */
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: 1em auto;
+    position: relative;
+    left: -58%;
+    transform: translateX(-50%); /* ortalama */
+}
+
+/* Text Container */
 .text1 {
     color: #ffffff;
     display: flex;
@@ -81,42 +91,55 @@ body {
     width: 90%;
     flex-wrap: wrap;
     gap: 0.4em; 
+    word-break: break-word;
 }
 
 /* Media Queries */
 
 /* Tablet */
 @media (max-width: 1024px) {
-    .home-link { left: 70%; font-size: 2vw; }
-    .about-link { left: 75%; font-size: 2vw; }
-    .services-link { left: 80%; font-size: 2vw; }
-    .contact-link { left: 85%; font-size: 2vw; }
-    .anasayfa { font-size: 2vw; margin-top: 1.5vw; line-height: 1; }
-    .text1 { width: 95%; flex-direction: column; gap: 0.4em; }
-    .resim { width: 95%; margin-top: 1.5em; }
-    .baslik { font-size: 1em; margin-top: 4vw; max-width: 90%; }
+    .anasayfa { font-size: 1.2em; }
+    .resim img { 
+        width: 425px;  /* +25px */
+        left: 50%; 
+        transform: translateX(-50%);
+    }
 }
 
-/* Büyük telefon / küçük tablet */
+/* Büyük Telefon / Küçük Tablet */
 @media (max-width: 768px) {
-    .home-link { left: 55%; font-size: 2.5vw; }
-    .about-link { left: 60%; font-size: 2.5vw; }
-    .services-link { left: 65%; font-size: 2.5vw; }
-    .contact-link { left: 70%; font-size: 2.5vw; }
-    .anasayfa { font-size: 2.5vw; margin-top: 1.5vw; line-height: 1; }
-    .text1 { width: 95%; text-align: center; flex-direction: column; gap: 0.4em; }
-    .resim { width: 95%; margin-top: 1.5em; }
-    .baslik { font-size: 1em; margin-top: 4vw; }
+    .menu-icon { display: block; }
+    .nav-links { 
+        display: none; 
+        flex-direction: column;
+        background-color: #0d0d0d;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 180px;
+        padding: 1em;
+        border: 0.15em solid #d1d1d1;
+        border-radius: 0.3em;
+        z-index: 10;
+    }
+    .nav-links.active { display: flex; }
+
+    .anasayfa { font-size: 1.5em; }
+    .resim img { 
+        width: 375px;  /* +25px */
+        left: 50%; 
+        transform: translateX(-50%);
+    }
 }
 
 /* Telefon */
 @media (max-width: 480px) {
-    .home-link { left: 40%; font-size: 3vw; }
-    .about-link { left: 50%; font-size: 3vw; }
-    .services-link { left: 60%; font-size: 3vw; }
-    .contact-link { left: 70%; font-size: 3vw; }
-    .anasayfa { font-size: 3vw; margin-top: 1.5vw; line-height: 1; }
-    .text1 { width: 100%; flex-direction: column; text-align: center; gap: 0.4em; }
-    .resim { width: 100%; margin-top: 1.5em; }
-    .baslik { font-size: 1em; margin-top: 4vw; max-width: 90%; }
+    .anasayfa { font-size: 1.8em; }
+    .resim img { 
+        width: 325px;  /* +25px */
+        left: 50%; 
+        transform: translateX(-50%); 
+    }
+    .baslik { padding: 0.8em 1.5em; }
+    .nav-links { width: 150px; right: 0.5em; top: 100%; }
 }
